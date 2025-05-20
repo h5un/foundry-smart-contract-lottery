@@ -1,4 +1,4 @@
-# Foundry Smart Contract Lottery F23
+# Foundry Smart Contract Lottery
 
 This project is a decentralized lottery application built using Foundry. The application allows users to participate in a lottery where a winner is selected randomly based on blockchain data.
 

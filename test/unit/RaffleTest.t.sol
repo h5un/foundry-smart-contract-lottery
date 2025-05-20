@@ -112,4 +112,28 @@ contract RaffleTest is Test {
         assert(uint256(requestId) > 0);
         assert(uint256(raffleState) == 1); // 0 = open, 1 = calculating
     }
+
+    function testGetPlayer() public {
+        // Arrange
+        vm.prank(PLAYER);
+        raffle.enterRaffle{value: config.entranceFee}();
+
+        // Act
+        address player = raffle.getPlayer(0);
+
+        // Assert
+        assertEq(player, PLAYER);
+    }
+    
+    function testGetNumOfPlayers() public {
+        // Arrange
+        vm.prank(PLAYER);
+        raffle.enterRaffle{value: config.entranceFee}();
+
+        // Act
+        uint256 numOfPlayers = raffle.getNumOfPlayers();
+
+        // Assert
+        assertEq(numOfPlayers, 1);
+    }
 }
